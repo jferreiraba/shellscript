@@ -7,7 +7,7 @@
 #
 
 echo -n "Ajustando o firewall..."
-IPTABLES -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 echo 1 > /proc/sys/net/ipv4/ip_forward
 echo -e "\033[0;32m OK \033[0m "
 
