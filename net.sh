@@ -1,4 +1,15 @@
 #!/bin/bash
+#
+# Program Name: net.sh
+# Author: JohnJohn
+#
+# Description: Shellscript facilita a configuração do WIFI AD-HOC no linux.
+#
+
+echo -n "Ajustando o firewall..."
+IPTABLES -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+echo 1 > /proc/sys/net/ipv4/ip_forward
+echo -e "\033[0;32m OK \033[0m "
 
 echo -n "Desligando a interface wlan0... "
 ifconfig wlan0 down
